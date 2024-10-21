@@ -10,7 +10,8 @@
     "dev": "tsx watch ./src/main.ts",
     "test": "vitest run",
     "test:watch": "vitest .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "dockerBuild": "docker build -t express-netech-base ."
   },
   "bin": "./src/main.ts",
   "keywords": [],

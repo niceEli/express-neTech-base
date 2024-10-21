@@ -1,0 +1,13 @@
+services:
+  microservice-base:
+    image: express-netech-base
+    ports:
+      - "3000:3000"
+    networks:
+      - netech
+    env_file:
+      - .env
+
+networks:
+  netech:
+    driver: bridge
