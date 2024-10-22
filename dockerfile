@@ -9,8 +9,8 @@ RUN bun i
 
 COPY . .
 
-RUN bun run bun:build
+RUN bun run build
 
 EXPOSE 3000
 
-CMD ["./dist/build"]
+CMD ["bun", "dist/index.js"]
