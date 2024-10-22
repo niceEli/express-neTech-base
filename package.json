@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "./src/main.ts",
+  "type": "module",
   "scripts": {
     "run": "tsx ./src/main.ts",
-    "build": "webpack",
+    "build": "tsx ./scripts/build/esbuild_build.mjs",
     "bun:build": "bun run build && bun build ./dist/index.js --compile --outfile=dist/build",
     "start": "node ./dist/index.js",
     "bun:start": "bun ./dist/index.js",
@@ -23,6 +24,7 @@
     "chalk": "^5.3.0",
     "commander": "^12.1.0",
     "dotenv": "^16.4.5",
+    "esbuild": "^0.24.0",
     "express": "^4.21.1",
     "inquirer": "^9.3.7",
     "tslog": "^4.9.3"
@@ -33,7 +35,7 @@
     "@types/express": "^5.0.0",
     "@types/inquirer": "^9.0.7",
     "@types/node": "^20.16.13",
-    "eslint": "^9.13.0",
+    "eslint": "^9.5.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "prettier": "3.3.2",
@@ -41,11 +43,6 @@
     "tsx": "^4.19.1",
     "typescript": "^5.6.3",
     "typescript-eslint": "^7.18.0",
-    "vitest": "^1.6.0",
-    "webpack": "^5.95.0",
-    "webpack-cli": "^5.1.4"
-  },
-  "overrides": {
-    "eslint": "^9.5.0"
+    "vitest": "^1.6.0"
   }
 }

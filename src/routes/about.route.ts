@@ -26,6 +26,8 @@ export function aboutRoute(): ResponseObj {
     uptimeUnix: process.uptime(),
   };
 
+  info.default = undefined;
+
   info.defaultServerReturnType = serverType;
 
   return new ResponseObj("About The tech.niceEli.microservice", info);
