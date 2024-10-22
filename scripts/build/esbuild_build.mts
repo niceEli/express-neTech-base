@@ -20,6 +20,7 @@ await esbuild
     packages: "bundle",
     outfile: OUTPUT,
     logLevel: "info",
+    tsconfig: "./tsconfig.json",
   })
   .catch((err) => {
     log.fatal(err);
