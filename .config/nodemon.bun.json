@@ -1,0 +1,6 @@
+{
+  "ignore": ["**.test.ts", "**.spec.ts", "node_modules", "dist"],
+  "watch": ["*"],
+  "ext": "*",
+  "exec": "bun run build && bun run bun:start"
+}
