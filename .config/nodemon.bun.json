@@ -1,5 +1,11 @@
 {
-  "ignore": ["**.test.ts", "**.spec.ts", "node_modules", "dist"],
+  "ignore": [
+    "**.test.ts",
+    "**.spec.ts",
+    "node_modules",
+    "dist",
+    "vitest.config.mts.timestamp**"
+  ],
   "watch": ["*"],
   "ext": "*",
   "exec": "bun run bun:build:noCompile && bun run bun:start"

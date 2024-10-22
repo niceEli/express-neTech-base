@@ -9,8 +9,8 @@ RUN bun i
 
 COPY . .
 
-RUN bun run build
+RUN bun run bun:build:noCompile
 
 EXPOSE 3000
 
-CMD ["bun", "dist/index.js"]
+CMD ["bun","run", "dist/index.js"]

@@ -21,6 +21,7 @@ await esbuild
     outfile: OUTPUT,
     logLevel: "info",
     tsconfig: "./tsconfig.json",
+    treeShaking: true,
   })
   .catch((err) => {
     log.fatal(err);
