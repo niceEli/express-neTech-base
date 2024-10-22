@@ -9,15 +9,23 @@ const log = new Logger();
 log.info("Building with esbuild...");
 
 log.debug(`${ENTRY} -> ${OUTPUT}`);
-await esbuild.build({
-  entryPoints: [ENTRY],
-  bundle: true,
-  minify: true,
-  sourcemap: true,
-  platform: "node",
-  packages: "bundle",
-  outfile: OUTPUT,
-  logLevel: "info",
-});
+await esbuild
+  .build({
+    entryPoints: [ENTRY],
+    bundle: true,
+    minify: true,
+    sourcemap: "inline",
+    platform: "node",
+    format: "cjs",
+    packages: "bundle",
+    outfile: OUTPUT,
+    logLevel: "info",
+  })
+  .catch((err) => {
+    log.fatal(err);
+    process.exit(1);
+  });
 
+console.log();
+log.debug(`${ENTRY} -> ${OUTPUT} ✔`);
 log.info("Build complete!");
