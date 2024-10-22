@@ -24,12 +24,17 @@ module.exports = {
         use: "ts-loader",
         exclude: /node_modules/,
       },
+      {
+        test: /\.json$/,
+        type: "json",
+      },
     ],
   },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
       "@utils": path.resolve(__dirname, "src/utils"),
+      "@routes": path.resolve(__dirname, "src/routes"),
     },
     extensions: [".ts", ".js"],
   },
