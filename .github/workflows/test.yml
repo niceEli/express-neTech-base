@@ -1,0 +1,59 @@
+name: Run Vitest
+
+on:
+  push:
+    branches:
+      - PROD
+  pull_request:
+    branches:
+      - PROD
+
+jobs:
+  node-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+
+      - name: Install dependencies
+        run: npm install --force
+
+      - name: Run tests
+        run: npm run test
+
+  bun-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: 'latest'
+
+      - name: Install dependencies
+        run: bun i
+
+      - name: Run tests
+        run: bun test
+
+  deno-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: 'latest'
+
+      - name: Install dependencies
+        run: deno install
+
+      - name: Run tests
+        run: deno task test
