@@ -2,9 +2,10 @@ const ENTRY = "./src/main.ts";
 const OUTPUT = "./dist/index.js";
 
 import * as esbuild from "esbuild";
-import { Logger } from "tslog";
 
-const log = new Logger();
+import { Logger, ILogObj } from "tslog";
+
+const log: Logger<ILogObj> = new Logger();
 
 log.info("Building with esbuild...");
 

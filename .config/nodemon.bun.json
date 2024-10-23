@@ -6,7 +6,7 @@
     "dist",
     "vitest.config.mts.timestamp**"
   ],
-  "watch": ["*"],
+  "watch": ["src/**"],
   "ext": "*",
   "exec": "bun run bun:build:noCompile && bun run bun:start"
 }

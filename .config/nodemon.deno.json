@@ -6,7 +6,7 @@
     "dist",
     "vitest.config.mts.timestamp**"
   ],
-  "watch": ["*"],
+  "watch": ["src/**"],
   "ext": "*",
   "exec": "deno task deno:build && deno task deno:start"
 }
